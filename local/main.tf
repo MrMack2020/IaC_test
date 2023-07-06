@@ -1,4 +1,11 @@
 terraform {
+  backend "remote" {
+    organization = "red30-29"
+
+    workspaces {
+      name = "VCS-workspace"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
